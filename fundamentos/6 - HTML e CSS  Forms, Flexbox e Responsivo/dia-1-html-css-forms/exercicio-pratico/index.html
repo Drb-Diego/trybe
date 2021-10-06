@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+  </head>
+
+  <body>
+    <main>
+      <form action="" id="form-pai">
+        <fieldset id="form-1">
+          <div>
+            <label for="input-name">Nome: </label>
+            <input type="text"name="name"id="input-name"maxlength="40"required />
+          </div>
+
+          <div>
+            <label for="input-email">Email</label>
+            <input type="email"name="email"id="input-email"maxlength="50"required />
+          </div>
+
+          <div>
+            <label for="input-cpf">CPF: </label>
+            <input type="text" name="cpf" id="input-cpf" required />
+          </div>
+
+          <div>
+            <label for="input-endereco">Endereço: </label>
+            <input type="texto"name="endereco"id="input-endereco"maxlength="200"required />
+          </div>
+
+          <div>
+            <label for="input-cidade"> Cidade: </label>
+            <input type="text"name="cidade"id="input-cidade"maxlength="28"required />
+          </div>
+
+          <div>
+            <label for="select-estado"> Estado: </label>
+            <select name="estado" id="select-estado" required>
+              <option value="ba">Ba</option>
+            </select>
+          </div>
+
+          <div>
+            <legend>Tipo da casa</legend>
+            <label for="input-casa">Apartamento</label>
+            <input type="radio"name="casa"id="input-casa"value="apartamento"required />
+
+            <label for="input-casa">Casa</label>
+            <input type="radio"name="casa"id="input-casa"value="casa"required />
+          </div>
+        </fieldset>
+
+        <fieldset id="form-2">
+          <div>
+            <textarea
+              name="resumo-curriculo"
+              id="resumo-curriculo"
+              cols="300"
+              rows="10"
+              maxlength="1000"
+              placeholder="Quais são suas experiencias ?"
+              required
+            ></textarea>
+          </div>
+
+          <div>
+            <label for="input-emprego">Qual é o seu emprego ?</label>
+            <input type="text" name="cargo" id="input-emprego" maxlength="40" required />
+          </div>
+
+          <div>
+            <label for="descricao">Descrição do cargo: </label>
+            <input type="text" maxlength="500" id="descricao" required />
+          </div>
+
+          <div>
+            <label for="data">Data de inicio: </label>
+            <input type="text" id="data" name="data" placeholder="Exemplo: 06/02/2000" required/>
+          </div>
+          <button id="enviar" type="submit">Enviar Formulario</button>
+          <button id="apagar" type="reset">Limpar Campos</button>
+        </fieldset>
+      </form>
+    </main>
+  </body>
+  <script src="./js/index.js"></script>
+</html>

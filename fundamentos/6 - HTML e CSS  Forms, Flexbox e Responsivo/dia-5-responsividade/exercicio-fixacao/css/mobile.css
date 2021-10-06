@@ -1,0 +1,25 @@
+@media screen and (min-width: 500px) {
+  
+  .primeiro-card{
+    display: flex;
+  }
+
+}
+
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  .segundo-card{
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 650px) and (max-width:  950px) {
+  .terceiro-card{
+    display: flex;
+  }
+}
+@media screen and (max-width: 500px) {
+
+  p .trick{
+    color: black;
+  }
+}

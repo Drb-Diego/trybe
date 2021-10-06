@@ -1,0 +1,59 @@
+/*
+  Reset basico
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+
+/*
+  Estilizando o conteudo do site 
+*/
+
+@media only screen and (max-width: 600px) {
+  
+  /*
+    Estilizando o header
+  */
+  header{
+    
+    display: flex;
+    padding: 20px;
+    flex-flow: column wrap;
+    align-items: center;
+
+    
+  }
+
+  header #title{
+
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+
+  header .paragraph-header{
+    margin-bottom: 10px;
+    
+  }
+
+  /*
+    Estilizando o main
+  */
+
+  main{
+    display: flex;
+    flex-flow: column ;
+    align-items: center;
+  }
+  main img{
+    width: 250px;
+    height: 250px;
+    margin: 10px 0;
+  }
+  
+
+}
