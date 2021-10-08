@@ -1,6 +1,7 @@
 import React from "react";
 import Pokemon from "./Pokemon";
 
+
 export default class Pokedex extends React.Component {
 
   constructor() {
@@ -32,8 +33,11 @@ export default class Pokedex extends React.Component {
         <div>
           <button onClick={this.handleClick}>Proximo Pokemon</button>
           <div className="group-button">
-            <button>Fire</button>
-            <button>Psychic</button>
+            {
+              pokemons.map((pokemon) => (
+                <button key={pokemon.id}>{pokemon.type}</button>
+              ))
+            }
           </div>
         </div>
       </div>
