@@ -1,14 +1,13 @@
 import React from "react";
 import Pokemon from "./Pokemon";
 
-
 export default class Pokedex extends React.Component {
-
   constructor() {
     super();
 
     this.state = {
       indexPokemon: 0,
+      typePokemon: "all",
     };
   }
 
@@ -17,27 +16,44 @@ export default class Pokedex extends React.Component {
     let { indexPokemon } = this.state;
 
     if (arrayIndexs > indexPokemon) this.setState({ indexPokemon: indexPokemon + 1 });
-    
-    else this.setState({ indexPokemon: 0 });
-  }
 
+    else this.setState({ indexPokemon: 0 });
+  };
+
+  handleClickTypePokemon = event => {
+    this.setState({ typePokemon: event.target.value });
+  };
 
   render() {
-
     const { pokemons } = this.props;
-    const { indexPokemon } = this.state;
+    const { indexPokemon, typePokemon } = this.state;
+
+    console.log(this.state);
 
     return (
       <div className='pokedex'>
-        <Pokemon pokemon={pokemons[indexPokemon]} />
+
+        {typePokemon === "all" ? (
+          <Pokemon pokemon={pokemons[indexPokemon]} />
+        ) : (
+          pokemons
+            .filter(pokemon => pokemon.type === typePokemon)
+            .map((pokemon) => <Pokemon pokemon={pokemon} />)
+        )}
+
         <div>
           <button onClick={this.handleClick}>Proximo Pokemon</button>
-          <div className="group-button">
-            {
-              pokemons.map((pokemon) => (
-                <button key={pokemon.id}>{pokemon.type}</button>
-              ))
-            }
+
+          <div className='group-button'>
+            {pokemons.map(pokemon => (
+              <button
+                key={pokemon.id}
+                value={pokemon.type}
+                onClick={this.handleClickTypePokemon}
+              >
+                {pokemon.type}
+              </button>
+            ))}
           </div>
         </div>
       </div>
